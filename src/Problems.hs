@@ -136,7 +136,10 @@ sumSquareDiff' =
 
 sumSquareDiff'' :: [Int] -> Int
 sumSquareDiff'' =
-  abs . uncurry (-) . mapTuple (sum . map square) (square . sum) . selfPair
+  abs
+    . uncurry (-)
+    . mapTuple (sum . map square) (square . sum)
+    . selfPair
 
 selfPair :: a -> (a, a)
 selfPair a = (a, a)
@@ -207,3 +210,25 @@ slidingBy n xs
 
 a8 :: Answer
 a8 = (8, p8)
+
+isTriplePitagoras :: (Int, Int, Int) -> Bool
+isTriplePitagoras (a, b, c) = a * a + b * b == c * c
+
+p9 :: String
+p9 =
+  let range = antara 1 1000
+   in [ a * b * c
+      | a <- range
+      , b <- range
+      , a <= b
+      , c <- range
+      , b <= c
+      , a <= c
+      , a + b + c == 1000
+      , isTriplePitagoras (a, b, c)
+      ]
+        |> head
+        |> show
+
+a9 :: Answer
+a9 = (9, p9)
