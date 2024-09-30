@@ -5,4 +5,4 @@ import Problems qualified as P
 
 main :: IO ()
 main = do
-    MyLib.printJawaban P.a5
+  MyLib.printJawaban P.a7
