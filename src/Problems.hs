@@ -4,12 +4,12 @@ import Data.List (sortOn)
 import Data.Ord (Down (Down))
 import Flow
 
-type Answer = (Integer, String)
+type Answer = (Int, String)
 
-antara :: Integer -> Integer -> [Integer]
+antara :: Int -> Int -> [Int]
 antara awal akhir = [awal .. akhir]
 
-antara' :: Integer -> Integer -> [Integer]
+antara' :: Int -> Int -> [Int]
 antara' akhir awal = [akhir, akhir - 1 .. awal]
 
 p1 :: String
@@ -38,12 +38,12 @@ p2 =
     |> sum
     |> show
  where
-  fibs :: [Integer]
+  fibs :: [Int]
   fibs = takeWhile (< 4_000_000) $ fib 1 2
 a2 :: Answer
 a2 = (2, p2)
 
-pFactors :: Integer -> [Integer]
+pFactors :: Int -> [Int]
 pFactors num = aux num 2
  where
   aux 1 _ = []
@@ -52,7 +52,7 @@ pFactors num = aux num 2
     | n %% f = f : aux (n // f) f
     | otherwise = aux n (f + 1)
 
-(//) :: Integer -> Integer -> Integer
+(//) :: Int -> Int -> Int
 (//) = div
 
 p3 :: String
@@ -73,10 +73,13 @@ isPalindrome str =
     |> map (uncurry (==))
     |> and
 
+isPalindrome' :: String -> Bool
+isPalindrome' = reverse .> zipSelf .> map (uncurry (==)) .> and
+
 zipSelf :: [a] -> [(a, a)]
 zipSelf xs = zip xs xs
 
-cek :: [(Integer, Bool)] -> Integer
+cek :: [(Int, Bool)] -> Int
 cek [] = 0
 cek ((i, b) : xs) = if b then i else cek xs
 
@@ -103,10 +106,10 @@ p4 =
 a4 :: Answer
 a4 = (4, p4)
 
-kpk :: Integer -> Integer -> Integer
+kpk :: Int -> Int -> Int
 kpk a b = a * b // fpb a b
 
-fpb :: Integer -> Integer -> Integer
+fpb :: Int -> Int -> Int
 fpb a b
   | a == b = a
   | otherwise = fpb (max a b - min a b) (min a b)
@@ -117,20 +120,23 @@ p5 = foldl kpk 1 [1 .. 20] |> show
 a5 :: Answer
 a5 = (5, p5)
 
-sumSquareDiff :: [Integer] -> Integer
+sumSquareDiff :: [Int] -> Int
 sumSquareDiff xs =
   let xsSqSm = xs |> map square |> sum
       xsSmSq = xs |> sum |> square
    in xsSqSm - xsSmSq |> abs
 
-sumSquareDiff' :: [Integer] -> Integer
+sumSquareDiff' :: [Int] -> Int
 sumSquareDiff' =
   id
     .> selfPair
-    .> mapFst (map square .> sum)
-    .> mapSnd (sum .> square)
+    .> mapTuple (sum . map square) (square . sum)
     .> uncurry (-)
     .> abs
+
+sumSquareDiff'' :: [Int] -> Int
+sumSquareDiff'' =
+  abs . uncurry (-) . mapTuple (sum . map square) (square . sum) . selfPair
 
 selfPair :: a -> (a, a)
 selfPair a = (a, a)
@@ -153,7 +159,7 @@ p6 = antara 1 100 |> sumSquareDiff |> show
 a6 :: Answer
 a6 = (6, p6)
 
-primes :: [Integer]
+primes :: [Int]
 primes = sieve [2 ..]
  where
   sieve [] = []
@@ -180,7 +186,7 @@ p8 =
     |> head
     |> show
 
-charToNum :: Char -> Integer
+charToNum :: Char -> Int
 charToNum n = case n of
   '0' -> 0
   '1' -> 1

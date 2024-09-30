@@ -3,7 +3,7 @@ module MyLib (printJawaban) where
 import System.Process (readProcess)
 import Text.Printf (printf)
 
-printJawaban :: (Integer, String) -> IO ()
+printJawaban :: (Int, String) -> IO ()
 printJawaban (soalKe, jawaban) = do
   hash <- md5s jawaban
   putStrLn $
