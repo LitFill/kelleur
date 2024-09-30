@@ -141,6 +141,9 @@ mapFst fn (f, s) = (fn f, s)
 mapSnd :: (b -> c) -> (a, b) -> (a, c)
 mapSnd fn (f, s) = (f, fn s)
 
+mapTuple :: (a -> a') -> (b -> b') -> (a, b) -> (a', b')
+mapTuple fFst fSnd = mapFst fFst . mapSnd fSnd
+
 square :: (Num a) => a -> a
 square x = x * x
 
