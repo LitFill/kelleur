@@ -21,6 +21,7 @@ a4	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	103;"	f
 a5	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	117;"	f
 a6	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	150;"	f
 a7	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	161;"	f
+a8	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	199;"	f
 antara	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	9;"	f
 antara'	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	12;"	f
 bindir	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/build/autogen/Paths_kelleur.hs	48;"	f
@@ -32,6 +33,7 @@ catchIO	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/gh
 catchIO	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/x/kelleur/build/kelleur/autogen/Paths_kelleur.hs	25;"	f
 catchIO	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/x/kelleur/opt/build/kelleur/autogen/Paths_kelleur.hs	25;"	f
 cek	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	79;"	f
+charToNum	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	180;"	f
 copyright	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/build/autogen/PackageInfo_kelleur.hs	22;"	f
 copyright	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/opt/build/autogen/PackageInfo_kelleur.hs	22;"	f
 copyright	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/x/kelleur/build/kelleur/autogen/PackageInfo_kelleur.hs	22;"	f
@@ -106,6 +108,7 @@ name	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9
 name	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/opt/build/autogen/PackageInfo_kelleur.hs	15;"	f
 name	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/x/kelleur/build/kelleur/autogen/PackageInfo_kelleur.hs	15;"	f
 name	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/x/kelleur/opt/build/kelleur/autogen/PackageInfo_kelleur.hs	15;"	f
+num8	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	164;"	f
 p1	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	15;"	f
 p2	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	34;"	f
 p3	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	58;"	f
@@ -113,6 +116,7 @@ p4	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	83;"	f
 p5	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	114;"	f
 p6	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	147;"	f
 p7	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	159;"	f
+p8	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	168;"	f
 pFactors	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	46;"	f
 pathSeparator	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/build/autogen/Paths_kelleur.hs	73;"	f
 pathSeparator	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-linux/ghc-9.4.8/kelleur-0.1.0.0/opt/build/autogen/Paths_kelleur.hs	73;"	f
@@ -121,6 +125,7 @@ pathSeparator	/home/litfill/proyek/haskell/kelleur/dist-newstyle/build/x86_64-li
 primes	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	153;"	f
 printJawaban	/home/litfill/proyek/haskell/kelleur/src/MyLib.hs	6;"	f
 selfPair	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	135;"	f
+slidingBy	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	194;"	f
 square	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	144;"	f
 sumSquareDiff	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	120;"	f
 sumSquareDiff'	/home/litfill/proyek/haskell/kelleur/src/Problems.hs	126;"	f
