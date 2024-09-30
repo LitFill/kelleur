@@ -71,6 +71,7 @@ library
     build-depends:    base ^>=4.17.2.1
                     , flow ^>=2.0.0.4
                     , process ^>=1.6.18.0
+                    , array ^>=0.5.4.0
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -96,6 +97,7 @@ executable kelleur
         base ^>=4.17.2.1,
         kelleur, 
         flow ^>=2.0.0.4,
+        array ^>=0.5.4.0
 
     -- Directories containing source files.
     hs-source-dirs:   app

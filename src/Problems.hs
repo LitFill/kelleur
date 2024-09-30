@@ -1,8 +1,13 @@
 module Problems where
 
+import Control.Monad (filterM, forM_)
+import Control.Monad.ST (runST)
+import Control.Monad.ST.Strict (ST)
+import Data.Array.ST hiding (range)
 import Data.List (sortOn)
 import Data.Ord (Down (Down))
 import Flow
+import GHC.Base (when)
 
 type Answer = (Int, String)
 
@@ -232,3 +237,20 @@ p9 =
 
 a9 :: Answer
 a9 = (9, p9)
+
+-- menggunakan optimasi dari ChatGPT
+primesHingga :: Int -> [Int]
+primesHingga limit = runST $ do
+  sieve <- newArray (2, limit) True :: ST s (STUArray s Int Bool)
+  forM_ [2 .. truncate (sqrt (fromIntegral limit :: Double))] $ \p -> do
+    isPrime <- readArray sieve p
+    when isPrime $
+      forM_ [p * p, p * p + p .. limit] $
+        \i -> writeArray sieve i False
+  filterM (readArray sieve) [2 .. limit]
+
+p10 :: String
+p10 = primesHingga 2_000_000 |> sum |> show
+
+a10 :: Answer
+a10 = (10, p10)
