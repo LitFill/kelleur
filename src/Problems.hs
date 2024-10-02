@@ -1,3 +1,7 @@
+{- |
+module for the problems code and the answer in the format of
+("Problem number", "Problem answer").
+-}
 module Problems where
 
 import Control.Monad (filterM, forM_)
@@ -9,11 +13,14 @@ import Data.Ord (Down (Down))
 import Flow
 import GHC.Base (when)
 
+-- | typing for convenient, [fst] is problem number, and [snd] is the answer
 type Answer = (Int, String)
 
+-- | antara membuat [List Int] dari awal hingga akhir secara menaik
 antara :: Int -> Int -> [Int]
 antara awal akhir = [awal .. akhir]
 
+-- | antara' membuat [List Int] dari akhir hingga awal secara menurun
 antara' :: Int -> Int -> [Int]
 antara' akhir awal = [akhir, akhir - 1 .. awal]
 
@@ -27,12 +34,15 @@ p1 =
 a1 :: Answer
 a1 = (1, p1)
 
+-- | operator [%%] atau [is evenly divisible by]
 (%%) :: (Integral a) => a -> a -> Bool
 a %% b = 0 == a `rem` b
 
+-- | isMulOf3And5 untuk mengecek apakah sebuah bilangan bisa dibagi rata oleh [3] dan/atau [5]
 isMulOf3And5 :: (Integral a) => a -> Bool
 isMulOf3And5 n = n %% 3 || n %% 5
 
+-- | fib menghasilkan [fibbonanci series] secara infinit
 fib :: (Num a) => a -> a -> [a]
 fib a b = a : fib b (a + b)
 
@@ -48,6 +58,7 @@ p2 =
 a2 :: Answer
 a2 = (2, p2)
 
+-- | pFactors mencari faktor prima dari sebuah [Int], hasilnya tidak berupa [Set]
 pFactors :: Int -> [Int]
 pFactors num = aux num 2
  where
@@ -57,6 +68,7 @@ pFactors num = aux num 2
     | n %% f = f : aux (n // f) f
     | otherwise = aux n (f + 1)
 
+-- | operator [//] untuk pembagian bilangan bulat
 (//) :: Int -> Int -> Int
 (//) = div
 
@@ -71,6 +83,10 @@ p3 =
 a3 :: Answer
 a3 = (3, p3)
 
+{- |
+isPalindrome mengecek apakah sebuah string [palindrome], yaitu sama jika
+dibaca dari depan dan belakang
+-}
 isPalindrome :: String -> Bool
 isPalindrome str =
   reverse str
@@ -78,9 +94,11 @@ isPalindrome str =
     |> map (uncurry (==))
     |> and
 
+-- | isPalindrome' adalah bentuk [point-free] dari [isPalindrome]
 isPalindrome' :: String -> Bool
 isPalindrome' = reverse .> zipSelf .> map (uncurry (==)) .> and
 
+-- | zipSelf men[zip] list dengan dirinya sendiri
 zipSelf :: [a] -> [(a, a)]
 zipSelf xs = zip xs xs
 
@@ -111,9 +129,11 @@ p4 =
 a4 :: Answer
 a4 = (4, p4)
 
+-- | kpk mencari [Kelipatan Persekutuan Terkecil] dari dua bilangan bulat
 kpk :: Int -> Int -> Int
 kpk a b = a * b // fpb a b
 
+-- | fpb mencari [Faktor Persekutuan Terbesar] dari dua bilangan bulat
 fpb :: Int -> Int -> Int
 fpb a b
   | a == b = a
