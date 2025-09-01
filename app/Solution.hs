@@ -25,6 +25,7 @@ solutions =
     , answer3
     , answer4
     , answer5
+    , answer6
     ]
 
 ----------------------------------------
@@ -37,11 +38,11 @@ answer1 = sol 1
     problem1
 
 problem1 :: Int
-problem1 =
-    sum [ n
-        | n <- [0 .. 1000 - 1]
-        , n %% 3 || n %% 5
-        ]
+problem1 = sum
+    [ n
+    | n <- [0 .. 1000 - 1]
+    , n %% 3 || n %% 5
+    ]
 
 (%%) :: Integral a => a -> a -> Bool
 a %% b = a `mod` b == 0
@@ -104,13 +105,13 @@ answer4 = sol 4
     problem4
 
 problem4 :: Int
-problem4 =
-    maximum [ x * y
-            | x <- [100..999]
-            , y <- [100..999]
-            , x <= y
-            , x * y &show &isPalindrome
-            ]
+problem4 = maximum
+    [ x * y
+    | x <- [100..999]
+    , y <- [100..999]
+    , x <= y
+    , x * y &show &isPalindrome
+    ]
 
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome s = s == reverse s
@@ -126,9 +127,7 @@ answer5 = sol 5
 
 -- time: ~7s
 problem5 :: Int
-problem5 =
-    find go [small .. big]
-    & fromMaybe 0
+problem5 = find go [small .. big] &fromMaybe 0
   where
     go x  = all (x %%) [1..20]
     small = product (takeWhile (<= 20) primes)
@@ -144,3 +143,19 @@ fpb :: Int -> Int -> Int
 fpb a b
     | a == b    = a
     | otherwise = fpb (a - b & abs) (min a b)
+
+----------------------------------------
+
+answer6 :: Sol
+answer6 = sol 6
+    "Sum square difference"
+    "Find the difference between the sum of the squares of the first one hundred natural numbers ([1..100]) and the square of the sum."
+    "867380888952c39a131fe1d832246ecc"
+    problem6
+
+problem6 :: Int
+problem6 = sumSquare - squareSum &abs
+  where
+    sumSquare = [1..100] &map square &sum
+    squareSum = [1..100] &sum &square
+    square x = x * x
