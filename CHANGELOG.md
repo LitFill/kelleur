@@ -1,5 +1,9 @@
 # Revision history for kelleur
 
-## 0.1.0.0 -- YYYY-mm-dd
+## 0.2.0.0 -- 2025-09-02
 
-* First version. Released on an unsuspecting world.
+*   Bump version to 0.2.0.0
+
+## 0.1.0.0 -- 2025-09-02
+
+* Initial release.
