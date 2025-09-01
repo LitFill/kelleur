@@ -3,9 +3,10 @@
 
 module Solution where
 
-import Data.Function ((&))
-import Data.List (find)
-import Data.Maybe (fromMaybe)
+import Data.Function       ((&))
+import Data.List           (find)
+import Data.Maybe          (fromMaybe)
+import Data.Numbers.Primes (primes)
 
 data Sol = Sol
     { number :: Int
@@ -26,6 +27,7 @@ solutions =
     , answer4
     , answer5
     , answer6
+    , answer7
     ]
 
 ----------------------------------------
@@ -79,7 +81,7 @@ answer3 = sol 3
     problem3
 
 problem3 :: Int
-problem3 = 600851475143 & primeFactors & maximum
+problem3 = 600851475143 &primeFactors &maximum
 
 primeFactors :: Int -> [Int]
 primeFactors = go 0
@@ -89,11 +91,11 @@ primeFactors = go 0
         | k %% p    = p : go ix (k `div` p)
         | otherwise = go (ix + 1) k
 
-primes :: [Int]
-primes = go [2..]
-  where
-    go [] = []
-    go (p : xs) = p : go [x | x <- xs, x /% p]
+-- primes :: [Int]
+-- primes = go [2..]
+--   where
+--     go [] = []
+--     go (p : xs) = p : go [x | x <- xs, x /% p]
 
 ----------------------------------------
 
@@ -159,3 +161,16 @@ problem6 = sumSquare - squareSum &abs
     sumSquare = [1..100] &map square &sum
     squareSum = [1..100] &sum &square
     square x = x * x
+
+----------------------------------------
+
+answer7 :: Sol
+answer7 = sol 7
+    "10001st prime"
+    "What is the 10,001st prime number?"
+    "8c32ab09ec0210af60d392e9b2009560"
+    problem7
+
+problem7 :: Int
+problem7 = primes !! 10000
+

@@ -82,6 +82,7 @@ executable kelleur
     build-depends:
       , base ^>=4.21.0.0
       , process
+      , primes
 
     -- Directories containing source files.
     hs-source-dirs:   app
