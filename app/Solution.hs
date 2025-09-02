@@ -1,6 +1,8 @@
 {-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE ViewPatterns #-}
 {-# LANGUAGE MultilineStrings #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE OverloadedRecordDot #-}
 
 module Solution where
 
@@ -8,6 +10,11 @@ import Data.Function       ((&))
 import Data.List           (find)
 import Data.Maybe          (fromMaybe)
 import Data.Numbers.Primes (primes)
+
+import TH
+import Data.Char (isSpace)
+import System.Process (readProcess)
+import Text.Printf (printf)
 
 data Sol = Sol
     { number :: Int
@@ -17,22 +24,45 @@ data Sol = Sol
     , answer :: String
     } deriving Show
 
+instance Semigroup Sol where (<>) = undefined
+instance Monoid    Sol where mempty = Sol 0 "" "" "" ""
+
 sol :: Show a => Int -> String -> String -> String -> a -> Sol
 sol n t d h = Sol n t d h . show
 
-solutions :: [Sol]
-solutions =
-    [ answer1
-    , answer2
-    , answer3
-    , answer4
-    , answer5
-    , answer6
-    , answer7
-    , answer8
-    , answer9
-    , answer10
-    ]
+md5s :: String -> IO String
+md5s = readProcess "md5sum" []
+
+cek :: Sol -> IO ()
+cek s = do
+    answerhash <- takeWhile (not . isSpace) <$> md5s s.answer
+    printf """
+        \x1b[33m====================\x1b[0m
+        Problem \x1b[32m%d\x1b[0m: \x1b[1m%s\x1b[0m
+           \x1b[3m%s\x1b[0m
+
+        * My Solution  : \x1b[1m%s\x1b[0m
+        * My Hash      : \x1b[4m%s\x1b[0m
+        * Correct Hash : \x1b[4m%s\x1b[0m
+          %s
+
+
+        """
+        s.number
+        s.title
+        s.desc
+        s.answer
+        answerhash
+        s.hash
+        (res answerhash)
+  where
+    res ah =
+        if ah == s.hash
+        then "\x1b[32mYeay! I am correct 🎉\x1b[0m"
+        else "\x1b[31mnooooooo Wrong 😢\x1b[0m"
+
+$(genAnswerFT 11 40)
+$(genCekN 40)
 
 ----------------------------------------
 
@@ -275,3 +305,21 @@ theGrid =
     20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
     01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
     """
+
+----------------------------------------
+
+solutions :: [Sol]
+solutions =
+    [ answer1
+    , answer2
+    , answer3
+    , answer4
+    , answer5
+    , answer6
+    , answer7
+    , answer8
+    , answer9
+    , answer10
+    , answer13
+    ]
+
