@@ -3,6 +3,14 @@
 ### 🚀 Features
 
 - *(cliff)* Add cliff.toml and update solution
+- Solve problem 7
+- *(Solution)* AutoGenerate the bindings
+- *(Solution)* Add to `solutions`
+- *(Main)* CekN also checks if s.desc is empty
+
+### ⚙️ Miscellaneous Tasks
+
+- Add temp.sh to .gitignore
 ## [0.2.0.0] - 2025-09-01
 
 ### 🚀 Features
