@@ -738,13 +738,74 @@ problem10 = primes &takeWhile (< 2_000_000) &sum
 
 answer11 :: Sol
 answer11 = sol 11
-    ""
-    ""
-    ""
+    "Largest product in a grid"
+    "What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?"
+    "678f5d2e1eaa42f04fa53411b4f441ac"
     problem11
 
 problem11 :: Int
-problem11 = 0
+problem11 = maximum allProd
+  where
+    allProd = concatMap coords2prods allCoords
+    allCoords = [(r, c) | r <- [0..19], c <- [0..19]]
+
+coords2prods :: (Int, Int) -> [Int]
+coords2prods startPoint =
+    map pathProd paths
+  where
+    pathProd path = path &map (`getInGrid` readGrid) &product
+    paths = segment4's startPoint &map (betweenPoint' startPoint)
+
+getInGrid :: (Int, Int) -> [Int] -> Int
+getInGrid (r, c) grd = grd !! (r * 20 + c)
+
+readGrid :: [Int]
+readGrid = theGrid &words &map read
+
+segment4's :: (Int, Int) -> [(Int, Int)]
+segment4's (r1, c1) =
+    [ (r, c)
+    | r <- go r1
+    , r >= 0
+    , r < 20
+    , c <- go c1
+    , c >= 0
+    , c < 20
+    , (r, c) /= (r1, c1)
+    ]
+  where
+    go x = [x, x - 3, x + 3]
+
+-- incorrect impl
+betweenPoint :: (Int, Int) -> (Int, Int) -> [(Int, Int)]
+betweenPoint (r1, c1) (r2, c2) =
+    [ (r, c)
+    | r <- go r1 r2
+    , c <- go c1 c2
+    ]
+  where
+    go a b = [min a b .. max a b]
+
+betweenPoint' :: (Int, Int) -> (Int, Int) -> [(Int, Int)]
+betweenPoint' p1@(x1, y1) (x2, y2) =
+  let
+    dx = abs (x2 - x1)
+    dy = -abs (y2 - y1)
+    sx = if x1 < x2 then 1 else -1
+    sy = if y1 < y2 then 1 else -1
+    err = dx + dy
+
+    go (x, y) e
+      | x == x2 && y == y2 = [(x, y)]
+      | otherwise =
+        let
+          e2 = 2 * e
+          (newX, newErrX) = if e2 >= dy then (x + sx, e + dy) else (x, e)
+          (newY, newErrY) = if e2 <= dx then (y + sy, newErrX + dx) else (y, newErrX)
+        in
+          (x, y) : go (newX, newY) newErrY
+  in
+    go p1 err
 
 theGrid :: String
 theGrid =
