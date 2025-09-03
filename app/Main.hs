@@ -4,6 +4,7 @@
 
 module Main where
 
+import Control.Monad      (forM_)
 import Data.Char          (isSpace)
 import Data.List          (find)
 import System.Environment (getArgs)
@@ -52,10 +53,24 @@ cekN n = case find go solutions of
 
 handleArgs :: [String] -> IO ()
 handleArgs = \case
-    [n] | num <- read @Int n
-        , num > 0 && num < 494
+    [n] | num <- read n
+        , num > 0 , num < 494
         -> cekN num
-    _   -> putStrLn "usage: <program> N\n    where N is problem number N (1 ≤ N ≤ 493)"
+    [n, m]
+        | n' <- read n
+        , n' > 0 , n' < 494
+        , m' <- read m
+        , m' > 0 , m' < 494
+        -> forM_ [n'..m'] cekN
+    _   -> putStrLn
+        """
+        \x1b[1;33mKelleur\x1b[0m - \x1b[3mcli program for verifying the solutions to the Project Euler puzzles.\x1b[0m
+
+        \x1b[1musage: kelleur N [M]\x1b[0m
+          where
+            \x1b[32mN\x1b[0m     is problem number N (\x1b[4m1 ≤ N ≤ 493\x1b[0m)
+            \x1b[32mM\x1b[0m     is like N but optional
+        """
 
 main :: IO ()
 main = getArgs >>= handleArgs
