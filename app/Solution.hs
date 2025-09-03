@@ -4,10 +4,12 @@
 
 module Solution where
 
-import Data.Function       ((&))
-import Data.List           (find)
+import Data.Function       ((&), on)
+import Data.List           (find, findIndex, nub, group, unfoldr, maximumBy)
 import Data.Maybe          (fromMaybe)
 import Data.Numbers.Primes (primes)
+import Data.Char (isSpace)
+import System.Process (readProcess)
 
 data Sol = Sol
     { number :: Int
