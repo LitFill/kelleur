@@ -1063,13 +1063,17 @@ problem15 = 0
 
 answer16 :: Sol
 answer16 = sol 16
-    ""
-    ""
-    ""
+    "Power digit sum"
+    "What is the sum of the digits of the number 2^1000?"
+    "6a5889bb0190d0211a991f47bb19a777"
     problem16
 
 problem16 :: Int
-problem16 = 0
+problem16 =
+    2 ^ (1000 :: Int)
+        &show @Integer
+        &map (read . pure)
+        &sum
 
 ----------------------------------------
 
