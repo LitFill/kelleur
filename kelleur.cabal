@@ -83,6 +83,8 @@ executable kelleur
       , base ^>=4.21.0.0
       , process
       , primes
+      , ordinal
+      , text
 
     -- Directories containing source files.
     hs-source-dirs:   app

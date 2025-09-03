@@ -4,12 +4,25 @@
 
 module Solution where
 
+import Data.Char           (isSpace)
 import Data.Function       ((&), on)
-import Data.List           (find, findIndex, nub, group, unfoldr, maximumBy)
 import Data.Maybe          (fromMaybe)
 import Data.Numbers.Primes (primes)
-import Data.Char (isSpace)
-import System.Process (readProcess)
+import System.Process      (readProcess)
+
+import Data.List
+    ( find
+    , findIndex
+    , nub
+    , group
+    , unfoldr
+    , maximumBy
+    )
+
+import Text.Numerals.Languages.English
+    ( toCardinal' )
+
+import Data.Text qualified as T
 
 data Sol = Sol
     { number :: Int
@@ -685,13 +698,19 @@ problem16 =
 
 answer17 :: Sol
 answer17 = sol 17
-    ""
-    ""
-    ""
+    "Number letter counts"
+    "If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?"
+    "6a979d4a9cf85135408529edc8a133d0"
     problem17
 
 problem17 :: Int
-problem17 = 0
+problem17 =
+    [1..1000 :: Int]
+        &map
+            ( T.filter (\c -> c /= ' ' && c /= '-')
+            . toCardinal' )
+        &T.concat
+        &T.length
 
 ----------------------------------------
 
