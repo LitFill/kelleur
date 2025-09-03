@@ -22,6 +22,11 @@ data Sol = Sol
 sol :: Show a => Int -> String -> String -> String -> a -> Sol
 sol n t d h = Sol n t d h . show
 
+cekAnswer :: Sol -> IO Bool
+cekAnswer a = do
+    hashd <- takeWhile (not . isSpace) <$> readProcess "md5sum" [] (answer a)
+    pure $ hashd == hash a
+
 solutions :: [Sol]
 solutions =
     [ answer1
