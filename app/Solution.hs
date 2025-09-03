@@ -29,499 +29,105 @@ cekAnswer a = do
 
 solutions :: [Sol]
 solutions =
-    [ answer1
-    , answer2
-    , answer3
-    , answer4
-    , answer5
-    , answer6
-    , answer7
-    , answer8
-    , answer9
-    , answer10
-    , answer11
-    , answer12
-    , answer13
-    , answer14
-    , answer15
-    , answer16
-    , answer17
-    , answer18
-    , answer19
-    , answer20
-    , answer21
-    , answer22
-    , answer23
-    , answer24
-    , answer25
-    , answer26
-    , answer27
-    , answer28
-    , answer29
-    , answer30
-    , answer31
-    , answer32
-    , answer33
-    , answer34
-    , answer35
-    , answer36
-    , answer37
-    , answer38
-    , answer39
-    , answer40
-    , answer41
-    , answer42
-    , answer43
-    , answer44
-    , answer45
-    , answer46
-    , answer47
-    , answer48
-    , answer49
-    , answer50
-    -- , answer51
-    -- , answer52
-    -- , answer53
-    -- , answer54
-    -- , answer55
-    -- , answer56
-    -- , answer57
-    -- , answer58
-    -- , answer59
-    -- , answer60
-    -- , answer61
-    -- , answer62
-    -- , answer63
-    -- , answer64
-    -- , answer65
-    -- , answer66
-    -- , answer67
-    -- , answer68
-    -- , answer69
-    -- , answer70
-    -- , answer71
-    -- , answer72
-    -- , answer73
-    -- , answer74
-    -- , answer75
-    -- , answer76
-    -- , answer77
-    -- , answer78
-    -- , answer79
-    -- , answer80
-    -- , answer81
-    -- , answer82
-    -- , answer83
-    -- , answer84
-    -- , answer85
-    -- , answer86
-    -- , answer87
-    -- , answer88
-    -- , answer89
-    -- , answer90
-    -- , answer91
-    -- , answer92
-    -- , answer93
-    -- , answer94
-    -- , answer95
-    -- , answer96
-    -- , answer97
-    -- , answer98
-    -- , answer99
-    -- , answer100
-    -- , answer101
-    -- , answer102
-    -- , answer103
-    -- , answer104
-    -- , answer105
-    -- , answer106
-    -- , answer107
-    -- , answer108
-    -- , answer109
-    -- , answer110
-    -- , answer111
-    -- , answer112
-    -- , answer113
-    -- , answer114
-    -- , answer115
-    -- , answer116
-    -- , answer117
-    -- , answer118
-    -- , answer119
-    -- , answer120
-    -- , answer121
-    -- , answer122
-    -- , answer123
-    -- , answer124
-    -- , answer125
-    -- , answer126
-    -- , answer127
-    -- , answer128
-    -- , answer129
-    -- , answer130
-    -- , answer131
-    -- , answer132
-    -- , answer133
-    -- , answer134
-    -- , answer135
-    -- , answer136
-    -- , answer137
-    -- , answer138
-    -- , answer139
-    -- , answer140
-    -- , answer141
-    -- , answer142
-    -- , answer143
-    -- , answer144
-    -- , answer145
-    -- , answer146
-    -- , answer147
-    -- , answer148
-    -- , answer149
-    -- , answer150
-    -- , answer151
-    -- , answer152
-    -- , answer153
-    -- , answer154
-    -- , answer155
-    -- , answer156
-    -- , answer157
-    -- , answer158
-    -- , answer159
-    -- , answer160
-    -- , answer161
-    -- , answer162
-    -- , answer163
-    -- , answer164
-    -- , answer165
-    -- , answer166
-    -- , answer167
-    -- , answer168
-    -- , answer169
-    -- , answer170
-    -- , answer171
-    -- , answer172
-    -- , answer173
-    -- , answer174
-    -- , answer175
-    -- , answer176
-    -- , answer177
-    -- , answer178
-    -- , answer179
-    -- , answer180
-    -- , answer181
-    -- , answer182
-    -- , answer183
-    -- , answer184
-    -- , answer185
-    -- , answer186
-    -- , answer187
-    -- , answer188
-    -- , answer189
-    -- , answer190
-    -- , answer191
-    -- , answer192
-    -- , answer193
-    -- , answer194
-    -- , answer195
-    -- , answer196
-    -- , answer197
-    -- , answer198
-    -- , answer199
-    -- , answer200
-    -- , answer201
-    -- , answer202
-    -- , answer203
-    -- , answer204
-    -- , answer205
-    -- , answer206
-    -- , answer207
-    -- , answer208
-    -- , answer209
-    -- , answer210
-    -- , answer211
-    -- , answer212
-    -- , answer213
-    -- , answer214
-    -- , answer215
-    -- , answer216
-    -- , answer217
-    -- , answer218
-    -- , answer219
-    -- , answer220
-    -- , answer221
-    -- , answer222
-    -- , answer223
-    -- , answer224
-    -- , answer225
-    -- , answer226
-    -- , answer227
-    -- , answer228
-    -- , answer229
-    -- , answer230
-    -- , answer231
-    -- , answer232
-    -- , answer233
-    -- , answer234
-    -- , answer235
-    -- , answer236
-    -- , answer237
-    -- , answer238
-    -- , answer239
-    -- , answer240
-    -- , answer241
-    -- , answer242
-    -- , answer243
-    -- , answer244
-    -- , answer245
-    -- , answer246
-    -- , answer247
-    -- , answer248
-    -- , answer249
-    -- , answer250
-    -- , answer251
-    -- , answer252
-    -- , answer253
-    -- , answer254
-    -- , answer255
-    -- , answer256
-    -- , answer257
-    -- , answer258
-    -- , answer259
-    -- , answer260
-    -- , answer261
-    -- , answer262
-    -- , answer263
-    -- , answer264
-    -- , answer265
-    -- , answer266
-    -- , answer267
-    -- , answer268
-    -- , answer269
-    -- , answer270
-    -- , answer271
-    -- , answer272
-    -- , answer273
-    -- , answer274
-    -- , answer275
-    -- , answer276
-    -- , answer277
-    -- , answer278
-    -- , answer279
-    -- , answer280
-    -- , answer281
-    -- , answer282
-    -- , answer283
-    -- , answer284
-    -- , answer285
-    -- , answer286
-    -- , answer287
-    -- , answer288
-    -- , answer289
-    -- , answer290
-    -- , answer291
-    -- , answer292
-    -- , answer293
-    -- , answer294
-    -- , answer295
-    -- , answer296
-    -- , answer297
-    -- , answer298
-    -- , answer299
-    -- , answer300
-    -- , answer301
-    -- , answer302
-    -- , answer303
-    -- , answer304
-    -- , answer305
-    -- , answer306
-    -- , answer307
-    -- , answer308
-    -- , answer309
-    -- , answer310
-    -- , answer311
-    -- , answer312
-    -- , answer313
-    -- , answer314
-    -- , answer315
-    -- , answer316
-    -- , answer317
-    -- , answer318
-    -- , answer319
-    -- , answer320
-    -- , answer321
-    -- , answer322
-    -- , answer323
-    -- , answer324
-    -- , answer325
-    -- , answer326
-    -- , answer327
-    -- , answer328
-    -- , answer329
-    -- , answer330
-    -- , answer331
-    -- , answer332
-    -- , answer333
-    -- , answer334
-    -- , answer335
-    -- , answer336
-    -- , answer337
-    -- , answer338
-    -- , answer339
-    -- , answer340
-    -- , answer341
-    -- , answer342
-    -- , answer343
-    -- , answer344
-    -- , answer345
-    -- , answer346
-    -- , answer347
-    -- , answer348
-    -- , answer349
-    -- , answer350
-    -- , answer351
-    -- , answer352
-    -- , answer353
-    -- , answer354
-    -- , answer355
-    -- , answer356
-    -- , answer357
-    -- , answer358
-    -- , answer359
-    -- , answer360
-    -- , answer361
-    -- , answer362
-    -- , answer363
-    -- , answer364
-    -- , answer365
-    -- , answer366
-    -- , answer367
-    -- , answer368
-    -- , answer369
-    -- , answer370
-    -- , answer371
-    -- , answer372
-    -- , answer373
-    -- , answer374
-    -- , answer375
-    -- , answer376
-    -- , answer377
-    -- , answer378
-    -- , answer379
-    -- , answer380
-    -- , answer381
-    -- , answer382
-    -- , answer383
-    -- , answer384
-    -- , answer385
-    -- , answer386
-    -- , answer387
-    -- , answer388
-    -- , answer389
-    -- , answer390
-    -- , answer391
-    -- , answer392
-    -- , answer393
-    -- , answer394
-    -- , answer395
-    -- , answer396
-    -- , answer397
-    -- , answer398
-    -- , answer399
-    -- , answer400
-    -- , answer401
-    -- , answer402
-    -- , answer403
-    -- , answer404
-    -- , answer405
-    -- , answer406
-    -- , answer407
-    -- , answer408
-    -- , answer409
-    -- , answer410
-    -- , answer411
-    -- , answer412
-    -- , answer413
-    -- , answer414
-    -- , answer415
-    -- , answer416
-    -- , answer417
-    -- , answer418
-    -- , answer419
-    -- , answer420
-    -- , answer421
-    -- , answer422
-    -- , answer423
-    -- , answer424
-    -- , answer425
-    -- , answer426
-    -- , answer427
-    -- , answer428
-    -- , answer429
-    -- , answer430
-    -- , answer431
-    -- , answer432
-    -- , answer433
-    -- , answer434
-    -- , answer435
-    -- , answer436
-    -- , answer437
-    -- , answer438
-    -- , answer439
-    -- , answer440
-    -- , answer441
-    -- , answer442
-    -- , answer443
-    -- , answer444
-    -- , answer445
-    -- , answer446
-    -- , answer447
-    -- , answer448
-    -- , answer449
-    -- , answer450
-    -- , answer451
-    -- , answer452
-    -- , answer453
-    -- , answer454
-    -- , answer455
-    -- , answer456
-    -- , answer457
-    -- , answer458
-    -- , answer459
-    -- , answer460
-    -- , answer461
-    -- , answer462
-    -- , answer463
-    -- , answer464
-    -- , answer465
-    -- , answer466
-    -- , answer467
-    -- , answer468
-    -- , answer469
-    -- , answer470
-    -- , answer471
-    -- , answer472
-    -- , answer473
-    -- , answer474
-    -- , answer475
-    -- , answer476
-    -- , answer477
-    -- , answer478
-    -- , answer479
-    -- , answer480
-    -- , answer481
-    -- , answer482
-    -- , answer483
-    -- , answer484
-    -- , answer485
-    -- , answer486
-    -- , answer487
-    -- , answer488
-    -- , answer489
-    -- , answer490
-    -- , answer491
-    -- , answer492
-    -- , answer493
+    [ answer1 , answer2 , answer3 , answer4 , answer5
+    , answer6 , answer7 , answer8 , answer9 , answer10
+    , answer11 , answer12 , answer13 , answer14 , answer15
+    , answer16 , answer17 , answer18 , answer19 , answer20
+    , answer21 , answer22 , answer23 , answer24 , answer25
+    , answer26 , answer27 , answer28 , answer29 , answer30
+    , answer31 , answer32 , answer33 , answer34 , answer35
+    , answer36 , answer37 , answer38 , answer39 , answer40
+    , answer41 , answer42 , answer43 , answer44 , answer45
+    , answer46 , answer47 , answer48 , answer49 , answer50
+    -- , answer51 , answer52 , answer53 , answer54 , answer55
+    -- , answer56 , answer57 , answer58 , answer59 , answer60
+    -- , answer61 , answer62 , answer63 , answer64 , answer65
+    -- , answer66 , answer67 , answer68 , answer69 , answer70
+    -- , answer71 , answer72 , answer73 , answer74 , answer75
+    -- , answer76 , answer77 , answer78 , answer79 , answer80
+    -- , answer81 , answer82 , answer83 , answer84 , answer85
+    -- , answer86 , answer87 , answer88 , answer89 , answer90
+    -- , answer91 , answer92 , answer93 , answer94 , answer95
+    -- , answer96 , answer97 , answer98 , answer99 , answer100
+    -- , answer101 , answer102 , answer103 , answer104 , answer105
+    -- , answer106 , answer107 , answer108 , answer109 , answer110
+    -- , answer111 , answer112 , answer113 , answer114 , answer115
+    -- , answer116 , answer117 , answer118 , answer119 , answer120
+    -- , answer121 , answer122 , answer123 , answer124 , answer125
+    -- , answer126 , answer127 , answer128 , answer129 , answer130
+    -- , answer131 , answer132 , answer133 , answer134 , answer135
+    -- , answer136 , answer137 , answer138 , answer139 , answer140
+    -- , answer141 , answer142 , answer143 , answer144 , answer145
+    -- , answer146 , answer147 , answer148 , answer149 , answer150
+    -- , answer151 , answer152 , answer153 , answer154 , answer155
+    -- , answer156 , answer157 , answer158 , answer159 , answer160
+    -- , answer161 , answer162 , answer163 , answer164 , answer165
+    -- , answer166 , answer167 , answer168 , answer169 , answer170
+    -- , answer171 , answer172 , answer173 , answer174 , answer175
+    -- , answer176 , answer177 , answer178 , answer179 , answer180
+    -- , answer181 , answer182 , answer183 , answer184 , answer185
+    -- , answer186 , answer187 , answer188 , answer189 , answer190
+    -- , answer191 , answer192 , answer193 , answer194 , answer195
+    -- , answer196 , answer197 , answer198 , answer199 , answer200
+    -- , answer201 , answer202 , answer203 , answer204 , answer205
+    -- , answer206 , answer207 , answer208 , answer209 , answer210
+    -- , answer211 , answer212 , answer213 , answer214 , answer215
+    -- , answer216 , answer217 , answer218 , answer219 , answer220
+    -- , answer221 , answer222 , answer223 , answer224 , answer225
+    -- , answer226 , answer227 , answer228 , answer229 , answer230
+    -- , answer231 , answer232 , answer233 , answer234 , answer235
+    -- , answer236 , answer237 , answer238 , answer239 , answer240
+    -- , answer241 , answer242 , answer243 , answer244 , answer245
+    -- , answer246 , answer247 , answer248 , answer249 , answer250
+    -- , answer251 , answer252 , answer253 , answer254 , answer255
+    -- , answer256 , answer257 , answer258 , answer259 , answer260
+    -- , answer261 , answer262 , answer263 , answer264 , answer265
+    -- , answer266 , answer267 , answer268 , answer269 , answer270
+    -- , answer271 , answer272 , answer273 , answer274 , answer275
+    -- , answer276 , answer277 , answer278 , answer279 , answer280
+    -- , answer281 , answer282 , answer283 , answer284 , answer285
+    -- , answer286 , answer287 , answer288 , answer289 , answer290
+    -- , answer291 , answer292 , answer293 , answer294 , answer295
+    -- , answer296 , answer297 , answer298 , answer299 , answer300
+    -- , answer301 , answer302 , answer303 , answer304 , answer305
+    -- , answer306 , answer307 , answer308 , answer309 , answer310
+    -- , answer311 , answer312 , answer313 , answer314 , answer315
+    -- , answer316 , answer317 , answer318 , answer319 , answer320
+    -- , answer321 , answer322 , answer323 , answer324 , answer325
+    -- , answer326 , answer327 , answer328 , answer329 , answer330
+    -- , answer331 , answer332 , answer333 , answer334 , answer335
+    -- , answer336 , answer337 , answer338 , answer339 , answer340
+    -- , answer341 , answer342 , answer343 , answer344 , answer345
+    -- , answer346 , answer347 , answer348 , answer349 , answer350
+    -- , answer351 , answer352 , answer353 , answer354 , answer355
+    -- , answer356 , answer357 , answer358 , answer359 , answer360
+    -- , answer361 , answer362 , answer363 , answer364 , answer365
+    -- , answer366 , answer367 , answer368 , answer369 , answer370
+    -- , answer371 , answer372 , answer373 , answer374 , answer375
+    -- , answer376 , answer377 , answer378 , answer379 , answer380
+    -- , answer381 , answer382 , answer383 , answer384 , answer385
+    -- , answer386 , answer387 , answer388 , answer389 , answer390
+    -- , answer391 , answer392 , answer393 , answer394 , answer395
+    -- , answer396 , answer397 , answer398 , answer399 , answer400
+    -- , answer401 , answer402 , answer403 , answer404 , answer405
+    -- , answer406 , answer407 , answer408 , answer409 , answer410
+    -- , answer411 , answer412 , answer413 , answer414 , answer415
+    -- , answer416 , answer417 , answer418 , answer419 , answer420
+    -- , answer421 , answer422 , answer423 , answer424 , answer425
+    -- , answer426 , answer427 , answer428 , answer429 , answer430
+    -- , answer431 , answer432 , answer433 , answer434 , answer435
+    -- , answer436 , answer437 , answer438 , answer439 , answer440
+    -- , answer441 , answer442 , answer443 , answer444 , answer445
+    -- , answer446 , answer447 , answer448 , answer449 , answer450
+    -- , answer451 , answer452 , answer453 , answer454 , answer455
+    -- , answer456 , answer457 , answer458 , answer459 , answer460
+    -- , answer461 , answer462 , answer463 , answer464 , answer465
+    -- , answer466 , answer467 , answer468 , answer469 , answer470
+    -- , answer471 , answer472 , answer473 , answer474 , answer475
+    -- , answer476 , answer477 , answer478 , answer479 , answer480
+    -- , answer481 , answer482 , answer483 , answer484 , answer485
+    -- , answer486 , answer487 , answer488 , answer489 , answer490
+    -- , answer491 , answer492 , answer493
     ]
 
 ----------------------------------------
