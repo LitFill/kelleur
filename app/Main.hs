@@ -47,7 +47,7 @@ cek s = do
 cekN :: Int -> IO ()
 cekN n = case find go solutions of
     Just s  -> cek s
-    Nothing -> printf "Problem %s is not solved yet." n
+    Nothing -> printf "Problem %d is not solved yet.\n" n
   where
     go s = s.number == n && not (null s.desc)
 
