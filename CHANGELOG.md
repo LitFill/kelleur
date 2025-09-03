@@ -1,4 +1,33 @@
-## [unreleased]
+## [0.4.0.0] - 2025-09-03
+
+### 🚀 Features
+
+- Add imports for next Solutions
+- *(Solution)* Add cek to this module for repl convenience
+- *(Solution)* Solve problem 12, 13, and 14
+- Solve 16
+- *(Main)* Now handle 2 numbers for cli args
+
+### 🐛 Bug Fixes
+
+- *(Main)* Wrong string formatting in printf
+
+### 💼 Other
+
+- Remove the number from desc of answer8
+
+### 🚜 Refactor
+
+- *(Main)* Rapihkan cekN
+
+### 📚 Documentation
+
+- Add ./test and ghc version
+
+### 🎨 Styling
+
+- Make the solutions more compact
+## [0.3.0.0] - 2025-09-02
 
 ### 🚀 Features
 
