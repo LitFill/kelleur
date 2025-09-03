@@ -44,9 +44,11 @@ cek s = do
         else "\x1b[31mnooooooo Wrong 😢\x1b[0m"
 
 cekN :: Int -> IO ()
-cekN n = case find (\s -> s.number == n && not (null s.desc)) solutions of
-    Just s -> cek s
-    Nothing -> putStrLn $ "Problem " ++ show n ++ " is not solved yet."
+cekN n = case find go solutions of
+    Just s  -> cek s
+    Nothing -> printf "Problem %s is not solved yet." n
+  where
+    go s = s.number == n && not (null s.desc)
 
 handleArgs :: [String] -> IO ()
 handleArgs = \case
